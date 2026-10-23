@@ -64,17 +64,17 @@ export default function AboutSection() {
     return (
         <section
             id="about"
-            className="relative flex min-h-screen w-full items-center overflow-hidden bg-(--color-bg-inverse) px-6 py-24 text-(--color-text-inverse-primary) sm:px-10 lg:px-16"
+            className="relative flex min-h-screen w-full items-center overflow-hidden bg-bg-inverse px-6 py-24 text-text-inverse-primary sm:px-10 lg:px-16"
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div className="absolute -right-40 top-0 h-96 w-96 rounded-full bg-(--color-text-accent-inverse)/10 blur-3xl" />
-                <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(0,0,0,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.12)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
+                <div className="absolute -right-40 top-0 h-96 w-96 rounded-full bg-bg-accent-inverse/10 blur-3xl" />
+                <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(rgba(0,0,0,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.12)_1px,transparent_1px)] bg-size-[56px_56px] mask-[linear-gradient(to_bottom,black,transparent_85%)]" />
             </div>
 
             <div className="relative mx-auto w-full max-w-7xl">
                 <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.8fr] lg:gap-20">
                     <div>
-                        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-(--color-text-inverse-primary)/10 bg-white/60 px-4 py-2 text-sm text-(--color-text-inverse-secondary)">
+                        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-text-inverse-primary/10 bg-white/60 px-4 py-2 text-sm text-text-inverse-secondary">
                             <FaCode className="text-cyan-700" size={14} aria-hidden="true" />
                             <span>A little about me</span>
                         </div>
@@ -84,7 +84,7 @@ export default function AboutSection() {
                             <span className="text-cyan-700"> useful experiences.</span>
                         </h2>
 
-                        <p className="mt-7 max-w-2xl text-lg leading-8 text-(--color-text-inverse-secondary)">
+                        <p className="mt-7 max-w-2xl text-lg leading-8 text-text-inverse-secondary">
                             I&apos;m Győző Róbert, a passionate developer with an interest in web
                             development and design. I enjoy bringing the two together to create
                             websites that look considered and work beautifully.
@@ -122,7 +122,7 @@ export default function AboutSection() {
                                 {interests.map(({ title, description, Icon }, index) => (
                                     <li
                                         key={title}
-                                        className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4"
+                                        className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/3 p-4"
                                     >
                                         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-300/10 text-cyan-300">
                                             <Icon size={17} aria-hidden="true" />
@@ -139,7 +139,7 @@ export default function AboutSection() {
                             </ul>
                         </div>
                         <div className="animate-gentle-float absolute -bottom-5 -left-4 hidden rounded-xl border border-black/10 bg-white px-4 py-3 shadow-xl sm:block">
-                            <p className="font-mono text-xs text-(--color-text-inverse-secondary)">{"<"} make it matter /{">"}</p>
+                            <p className="font-mono text-xs text-text-inverse-secondary">{"<"} make it matter /{">"}</p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ export default function AboutSection() {
                         <h3 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
                             A little more about <span className="text-cyan-700">my path.</span>
                         </h3>
-                        <p className="mt-4 leading-7 text-(--color-text-inverse-secondary)">
+                        <p className="mt-4 leading-7 text-text-inverse-secondary">
                             The places I&apos;ve learned, the work I&apos;ve done, and what came next.
                         </p>
                     </div>
@@ -190,17 +190,17 @@ export default function AboutSection() {
                                 <ol className="mt-6 space-y-6">
                                     {entries.length > 0 ? entries.map(({ period, title: entryTitle, subtitle, description }) => (
                                         <li key={`${period}-${entryTitle}`} className="relative border-l border-cyan-700/30 pb-1 pl-6 last:border-l-transparent">
-                                            <span aria-hidden="true" className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
+                                            <span aria-hidden="true" className="absolute -left-1.25 top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
                                             <p className="font-mono text-sm text-cyan-800">{period}</p>
                                             <h5 className="mt-2 text-lg font-semibold">{entryTitle}</h5>
-                                            <p className="mt-1 text-base text-(--color-text-inverse-secondary)">{subtitle}</p>
+                                            <p className="mt-1 text-base text-text-inverse-secondary">{subtitle}</p>
                                             {description && (
                                                 <p className="mt-3 text-base leading-7 text-black/60">{description}</p>
                                             )}
                                         </li>
                                     )) : (
                                         <li className="relative border-l border-cyan-700/30 py-1 pl-6">
-                                            <span aria-hidden="true" className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
+                                            <span aria-hidden="true" className="absolute -left-1.25 top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
                                             <p className="text-base leading-7 text-black/55">{emptyMessage}</p>
                                         </li>
                                     )}
