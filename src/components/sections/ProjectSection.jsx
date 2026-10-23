@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { FaArrowRight, FaCode, FaLayerGroup, FaCalculator } from "react-icons/fa6";
+import { FaArrowRight, FaCode, FaLayerGroup, FaCalculator, FaDiscord } from "react-icons/fa6";
 import portfolioScreenshot from "../../assets/portfolio_screenshot.png";
 
 export default function ProjectSection() {
@@ -10,7 +10,9 @@ export default function ProjectSection() {
             title: "Personal portfolio",
             description: "A home for my work, ideas, and the things I enjoy building for the web.",
             details: "This project is a personal portfolio website built using React and Tailwind CSS. It serves as a showcase for my projects, skills, and experiences in web development. The website features a clean and modern design, responsive layout, and interactive elements to provide an engaging user experience.",
-            url: "https://github.com/gyozorobeert/gyozorobeert.github.io",
+            links: [
+                { label: "View source", url: "https://github.com/gyozorobeert/gyozorobeert.github.io" },
+            ],
             tags: ["React", "Tailwind CSS", "JavaScript", "Frontend Development", "Portfolio", "Web Design"],
             Icon: FaCode,
             image: portfolioScreenshot,
@@ -23,26 +25,31 @@ export default function ProjectSection() {
             title: "C# Calculator",
             description: "A simple calculator application built with C# and Windows Forms, demonstrating basic arithmetic operations and a user-friendly interface.",
             details: "This project showcases my ability to create functional desktop applications using C# and Windows Forms. It includes features such as addition, subtraction, multiplication, and division, along with a clear and intuitive user interface.",
-            url: "https://github.com/gyozorobeert/calculator",
+            links: [
+                { label: "View source", url: "https://github.com/gyozorobeert/calculator" },
+            ],
             tags: ["C#", "Windows Forms", "Desktop Application", "GUI", "Arithmetic Operations"],
             Icon: FaCalculator,
             image: null,
             imageAlt: "",
             visual: "from-violet-400/25 via-violet-400/5 to-transparent",
         },
-        /*{
+        {
             number: "03",
-            label: "UP NEXT",
-            title: "More on the way",
-            description: "I’m always exploring new ideas. Check back as I add more projects here.",
-            details: "",
-            url: "",
-            tags: ["Learning", "Building"],
-            Icon: FaLayerGroup,
+            label: "UNDER RECONSIDERATION",
+            title: "Robert's Developer Discord Server Bot",
+            description: "A Discord bot built with Node.js and Discord.js, designed to enhance server management and provide interactive features for users.",
+            details: "This project demonstrates my skills in backend development and API integration. The bot includes features such as moderation commands, user engagement tools, and custom commands to improve the overall experience of the Discord server.",
+            links: [
+                { label: "View source", url: "https://github.com/gyozorobeert/Roberts-Developer-Community-Discord-Bot" },
+                { label: "Join Discord server", url: "https://discord.gg/SqQWMZqVFr" },
+            ],
+            tags: ["Python", "Discord.py", "Bot Development", "API Integration", "Server Management"],
+            Icon: FaDiscord,
             image: null,
             imageAlt: "",
             visual: "from-emerald-400/20 via-emerald-400/5 to-transparent",
-        },*/
+        },
     ];
     const [selectedProject, setSelectedProject] = useState(null);
     const dialogRef = useRef(null);
@@ -264,16 +271,21 @@ export default function ProjectSection() {
                             ))}
                         </ul>
 
-                        {selectedProject.url && (
-                            <a
-                                href={selectedProject.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="mt-8 inline-flex items-center gap-3 rounded-lg bg-(--color-text-accent) px-5 py-3 font-semibold text-[#101214] transition-colors hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-text-accent)"
-                            >
-                                Visit project
-                                <FaArrowRight size={14} aria-hidden="true" />
-                            </a>
+                        {selectedProject.links.length > 0 && (
+                            <div className="mt-8 flex flex-wrap gap-3">
+                                {selectedProject.links.map(({ label, url }) => (
+                                    <a
+                                        key={url}
+                                        href={url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="inline-flex items-center gap-3 rounded-lg bg-(--color-text-accent) px-5 py-3 font-semibold text-[#101214] transition-colors hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-text-accent)"
+                                    >
+                                        {label}
+                                        <FaArrowRight size={14} aria-hidden="true" />
+                                    </a>
+                                ))}
+                            </div>
                         )}
                     </div>
                 </dialog>

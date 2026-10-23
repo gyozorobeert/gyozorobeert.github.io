@@ -95,7 +95,10 @@ Edit the `projects` array in `src/components/sections/ProjectSection.jsx`. Proje
   title: "Project name",
   description: "A short summary shown on the card.",
   details: "More information shown when the card is opened.",
-  url: "https://github.com/username/repository",
+  links: [
+    { label: "View source", url: "https://github.com/username/repository" },
+    { label: "Visit live site", url: "https://example.com" },
+  ],
   tags: ["React", "Tailwind CSS"],
   Icon: FaCode,
   image: null,
@@ -104,7 +107,7 @@ Edit the `projects` array in `src/components/sections/ProjectSection.jsx`. Proje
 }
 ```
 
-To use an image preview, place the image in `src/assets/`, import it at the top of `ProjectSection.jsx`, then assign the imported value to `image` and provide descriptive `imageAlt` text. Set `image` to `null` to show the icon instead. Set `url` to the repository or live site URL to show the **Visit project** button in the detail dialog.
+To use an image preview, place the image in `src/assets/`, import it at the top of `ProjectSection.jsx`, then assign the imported value to `image` and provide descriptive `imageAlt` text. Set `image` to `null` to show the icon instead. Add one or more objects to `links` to show action buttons in the detail dialog; each link's `label` is its button text and `url` is its destination.
 
 ## Build
 
