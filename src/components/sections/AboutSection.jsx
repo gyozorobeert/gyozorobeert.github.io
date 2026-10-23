@@ -1,6 +1,48 @@
-import { FaArrowRight, FaCode, FaLightbulb, FaPalette } from "react-icons/fa6";
+import {
+    FaArrowRight,
+    FaBriefcase,
+    FaCode,
+    FaGraduationCap,
+    FaLightbulb,
+    FaPalette,
+} from "react-icons/fa6";
 
 export default function AboutSection() {
+    const education = [
+        {
+            period: "2025 - Present",
+            title: "Business Informatics Engineer (BSc)",
+            subtitle: "Óbuda University",
+            description: "Currently pursuing a degree in Business Informatics Engineering, focusing on the intersection of technology and business processes.",
+        },
+        {
+            period: "2019 - 2023",
+            title: "IT Systems and Applications Operations Technician",
+            subtitle: "István Széchenyi Technical School and College of Nyíregyháza Vocational Training Center",
+            description: "Completed a comprehensive program in IT systems and applications operations, gaining hands-on experience in managing and maintaining IT infrastructures.",
+        }
+    ];
+    const workExperience = [
+        {
+            period: "Autumn 2026",
+            title: "Front-End Developer",
+            subtitle: "Freelance",
+            description: "Created this portfolio website to showcase my skills and projects. Focused on front-end development, responsive design, and user experience.",
+        },
+        {
+            period: "2024 - Present",
+            title: "Junior Full-Stack Developer",
+            subtitle: "Hungarian Defense Forces",
+            description: "Working as a Junior Full-Stack Developer, contributing to the development and maintenance of web applications, and collaborating with cross-functional teams to deliver high-quality software solutions.",
+        },
+        {
+            period: "Summer 2022",
+            title: "Front-End Developer Intern / Erasmus+ Trainee",
+            subtitle: "Braga",
+            description: "Participated in an internship program in Braga, focusing on front-end development. Gained practical experience in building responsive web interfaces and enhancing user experiences through modern web technologies.",
+        }
+    ];
+
     const interests = [
         {
             title: "Development",
@@ -99,6 +141,72 @@ export default function AboutSection() {
                         <div className="animate-gentle-float absolute -bottom-5 -left-4 hidden rounded-xl border border-black/10 bg-white px-4 py-3 shadow-xl sm:block">
                             <p className="font-mono text-xs text-(--color-text-inverse-secondary)">{"<"} make it matter /{">"}</p>
                         </div>
+                    </div>
+                </div>
+
+                <div className="mt-24">
+                    <div className="mb-10 max-w-2xl">
+                        <p className="font-mono text-xs tracking-[0.2em] text-cyan-800">THE JOURNEY</p>
+                        <h3 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                            A little more about <span className="text-cyan-700">my path.</span>
+                        </h3>
+                        <p className="mt-4 leading-7 text-(--color-text-inverse-secondary)">
+                            The places I&apos;ve learned, the work I&apos;ve done, and what came next.
+                        </p>
+                    </div>
+
+                    <div className="grid items-start gap-8 md:grid-cols-2">
+                        {[
+                            {
+                                title: "Education",
+                                eyebrow: "LEARNING",
+                                Icon: FaGraduationCap,
+                                entries: education,
+                                emptyMessage: "Education details coming soon.",
+                            },
+                            {
+                                title: "Work experience",
+                                eyebrow: "EXPERIENCE",
+                                Icon: FaBriefcase,
+                                entries: workExperience,
+                                emptyMessage: "Work experience details coming soon.",
+                            },
+                        ].map(({ title, eyebrow, Icon, entries, emptyMessage }) => (
+                            <section
+                                key={title}
+                                aria-label={title}
+                                className="rounded-2xl border border-black/10 bg-white/60 p-6 shadow-sm sm:p-8"
+                            >
+                                <div className="flex items-center gap-4 border-b border-black/10 pb-5">
+                                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-700/10 text-cyan-800">
+                                        <Icon size={19} aria-hidden="true" />
+                                    </span>
+                                    <div>
+                                        <p className="font-mono text-xs tracking-[0.18em] text-black/45">{eyebrow}</p>
+                                        <h4 className="mt-1 text-2xl font-bold">{title}</h4>
+                                    </div>
+                                </div>
+
+                                <ol className="mt-6 space-y-6">
+                                    {entries.length > 0 ? entries.map(({ period, title: entryTitle, subtitle, description }) => (
+                                        <li key={`${period}-${entryTitle}`} className="relative border-l border-cyan-700/30 pb-1 pl-6 last:border-l-transparent">
+                                            <span aria-hidden="true" className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
+                                            <p className="font-mono text-sm text-cyan-800">{period}</p>
+                                            <h5 className="mt-2 text-lg font-semibold">{entryTitle}</h5>
+                                            <p className="mt-1 text-base text-(--color-text-inverse-secondary)">{subtitle}</p>
+                                            {description && (
+                                                <p className="mt-3 text-base leading-7 text-black/60">{description}</p>
+                                            )}
+                                        </li>
+                                    )) : (
+                                        <li className="relative border-l border-cyan-700/30 py-1 pl-6">
+                                            <span aria-hidden="true" className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
+                                            <p className="text-base leading-7 text-black/55">{emptyMessage}</p>
+                                        </li>
+                                    )}
+                                </ol>
+                            </section>
+                        ))}
                     </div>
                 </div>
             </div>
