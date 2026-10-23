@@ -188,17 +188,21 @@ export default function AboutSection() {
                                 </div>
 
                                 <ol className="mt-6 space-y-6">
-                                    {entries.length > 0 ? entries.map(({ period, title: entryTitle, subtitle, description }) => (
-                                        <li key={`${period}-${entryTitle}`} className="relative border-l border-cyan-700/30 pb-1 pl-6 last:border-l-transparent">
-                                            <span aria-hidden="true" className="absolute -left-1.25 top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
-                                            <p className="font-mono text-sm text-cyan-800">{period}</p>
-                                            <h5 className="mt-2 text-lg font-semibold">{entryTitle}</h5>
-                                            <p className="mt-1 text-base text-text-inverse-secondary">{subtitle}</p>
-                                            {description && (
-                                                <p className="mt-3 text-base leading-7 text-black/60">{description}</p>
-                                            )}
-                                        </li>
-                                    )) : (
+                                    {entries.length > 0 ? entries.map(({ period, title: entryTitle, subtitle, description }) => {
+                                        const isPresent = period.includes("Present");
+
+                                        return (
+                                            <li key={`${period}-${entryTitle}`} className={`relative border-l ${isPresent ? "border-green-700/30" : "border-cyan-700/30"} pb-1 pl-6 last:border-l-transparent`}>
+                                                <span aria-hidden="true" className={`absolute -left-1.25 top-1 h-2.5 w-2.5 rounded-full ${isPresent ? "bg-cyan-500" : "bg-black"} ring-4 ring-white`} />
+                                                <p className={`font-mono text-sm ${isPresent ? "text-cyan-500" : "text-black"}`}>{period}</p>
+                                                <h5 className="mt-2 text-lg font-semibold">{entryTitle}</h5>
+                                                <p className="mt-1 text-base text-text-inverse-secondary">{subtitle}</p>
+                                                {description && (
+                                                    <p className="mt-3 text-base leading-7 text-black/60">{description}</p>
+                                                )}
+                                            </li>
+                                        );
+                                    }) : (
                                         <li className="relative border-l border-cyan-700/30 py-1 pl-6">
                                             <span aria-hidden="true" className="absolute -left-1.25 top-1 h-2.5 w-2.5 rounded-full bg-cyan-700 ring-4 ring-white" />
                                             <p className="text-base leading-7 text-black/55">{emptyMessage}</p>
