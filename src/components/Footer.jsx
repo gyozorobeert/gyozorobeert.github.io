@@ -5,7 +5,7 @@ export default function Footer() {
     const socialLinks = [
         { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100093204785817", Icon: FaFacebook },
         { label: "Instagram", href: "https://www.instagram.com/gyozorobeert/", Icon: FaInstagram },
-        { label: "Discord Server", href: "https://discord.gg/SqQWMZqVFr", Icon: FaDiscord },
+        { label: "Discord Server", href: "https://discord.gg/TyYtwgKpez", Icon: FaDiscord },
         { label: "GitHub", href: "https://github.com/gyozorobeert", Icon: FaGithub },
     ];
 

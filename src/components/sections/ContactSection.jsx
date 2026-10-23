@@ -5,7 +5,7 @@ export default function ContactSection() {
         {
             label: "Discord",
             detail: "Join the community",
-            href: "https://discord.gg/SqQWMZqVFr",
+            href: "https://discord.gg/TyYtwgKpez",
             Icon: FaDiscord,
         },
         {
@@ -57,7 +57,7 @@ export default function ContactSection() {
                     </p>
 
                     <a
-                        href="https://discord.gg/SqQWMZqVFr"
+                        href="https://discord.gg/TyYtwgKpez"
                         target="_blank"
                         rel="noreferrer"
                         className="mt-9 inline-flex items-center justify-center gap-3 rounded-lg bg-[#5865f2] px-6 py-3.5 font-semibold text-white transition-transform hover:-translate-y-0.5"

@@ -42,7 +42,7 @@ export default function ProjectSection() {
             details: "This project demonstrates my skills in backend development and API integration. The bot includes features such as moderation commands, user engagement tools, and custom commands to improve the overall experience of the Discord server.",
             links: [
                 { label: "View source", url: "https://github.com/gyozorobeert/Roberts-Developer-Community-Discord-Bot" },
-                { label: "Join Discord server", url: "https://discord.gg/SqQWMZqVFr" },
+                { label: "Join Discord server", url: "https://discord.gg/TyYtwgKpez" },
             ],
             tags: ["Python", "Discord.py", "Bot Development", "API Integration", "Server Management"],
             Icon: FaDiscord,
