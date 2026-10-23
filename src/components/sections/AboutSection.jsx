@@ -24,7 +24,7 @@ export default function AboutSection() {
     ];
     const workExperience = [
         {
-            period: "Autumn 2026",
+            period: "2026 - Present",
             title: "Front-End Developer",
             subtitle: "Freelance",
             description: "Created this portfolio website to showcase my skills and projects. Focused on front-end development, responsive design, and user experience.",
