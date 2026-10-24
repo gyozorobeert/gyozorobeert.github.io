@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { FaHouse, FaUser, FaFolderOpen, FaEnvelope } from "react-icons/fa6";
+import { FaHouse, FaUser, FaCode, FaFolderOpen, FaEnvelope } from "react-icons/fa6";
 
 export default function Navigation() {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigationItems = [
       { label: "Home", href: "#home", Icon: FaHouse },
       { label: "About", href: "#about", Icon: FaUser },
+      { label: "Skills", href: "#skills", Icon: FaCode },
       { label: "Projects", href: "#projects", Icon: FaFolderOpen },
       { label: "Contact", href: "#contact", Icon: FaEnvelope },
     ];

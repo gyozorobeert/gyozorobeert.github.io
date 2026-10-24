@@ -158,18 +158,18 @@ export default function AboutSection() {
                     <div className="grid items-start gap-8 md:grid-cols-2">
                         {[
                             {
-                                title: "Education",
-                                eyebrow: "LEARNING",
-                                Icon: FaGraduationCap,
-                                entries: education,
-                                emptyMessage: "Education details coming soon.",
-                            },
-                            {
                                 title: "Work experience",
                                 eyebrow: "EXPERIENCE",
                                 Icon: FaBriefcase,
                                 entries: workExperience,
                                 emptyMessage: "Work experience details coming soon.",
+                            },
+                            {
+                                title: "Education",
+                                eyebrow: "LEARNING",
+                                Icon: FaGraduationCap,
+                                entries: education,
+                                emptyMessage: "Education details coming soon.",
                             },
                         ].map(({ title, eyebrow, Icon, entries, emptyMessage }) => (
                             <section

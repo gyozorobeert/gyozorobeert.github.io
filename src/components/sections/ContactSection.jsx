@@ -1,7 +1,13 @@
-import { FaArrowRight, FaDiscord, FaFacebook, FaGithub, FaInstagram, FaPaperPlane } from "react-icons/fa6";
+import { FaArrowRight, FaDiscord, FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaPaperPlane } from "react-icons/fa6";
 
 export default function ContactSection() {
     const contactLinks = [
+        {
+            label: "Email",
+            detail: "gyozorobert08@gmail.com",
+            href: "mailto:gyozorobert08@gmail.com",
+            Icon: FaEnvelope,
+        },
         {
             label: "Discord",
             detail: "Join the community",
